@@ -1,3 +1,26 @@
-#cirBtn {
-    background-color: purple;
+#canvas {
+    width: 600px;
+    height: 600px;
+    background-color: whitesmoke;
+    position: relative;
+}
+
+.rectangle {
+    position: absolute;
+    background-color: green;
+}
+
+.square {
+    position: absolute;
+    background-color: red;
+}
+
+.circle {
+    position: absolute;
+    background-color: blue;
+}
+
+.triangle {
+    position: absolute;
+    background-color: yellow;
 }

@@ -19,21 +19,26 @@
 
             <div class="col-3">
 
-                <div class="input-group mb-3 mt-3">
+                <div class="input-group mb-3 mt-3" id="rectInput">
+
                     <div class="input-group-prepend ">
                         <span class="input-group-text" id="rectWidth">Width:</span>
                     </div>
-                    <input type="text" class="form-control col-12">
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="rectHeight">Height:</span>
+                    <input type="text" class="form-control col-12" id="rectWidthInput">
+                    <div class="input-group-append">
+                        <span class="input-group-text">px</span>
                     </div>
-                    <input type="text" class="form-control col-12">
-                </div>
 
-                <button type="button" class="btn btn-outline-success">Draw A Rectangle!</button>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text mt-3" id="rectHeight">Height:</span>
+                    </div>
+                    <input type="text" class="form-control col-12 mt-3" id="rectHeightInput">
+                    <div class="input-group-append">
+                        <span class="input-group-text mt-3">px</span>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success mt-3" id="rectBtn">Draw A Rectangle!</button>
+
+                </div>
 
             </div>
 
@@ -44,9 +49,11 @@
                         <span class="input-group-text" id="sqLength">Length:</span>
                     </div>
                     <input type="text" class="form-control col-12">
+                    <div class="input-group-append">
+                        <span class="input-group-text">px</span>
+                    </div>
+                    <button type="submit" class="btn btn-outline-danger mt-3" id="sqBtn">Draw A Square!</button>
                 </div>
-
-                <button type="button" class="btn btn-outline-danger">Draw A Square!</button>
 
             </div>
 
@@ -57,9 +64,26 @@
                         <span class="input-group-text" id="cirRadius">Radius:</span>
                     </div>
                     <input type="text" class="form-control col-12">
+                    <div class="input-group-append">
+                        <span class="input-group-text">px</span>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mt-3" id="cirBtn">Draw A Circle!</button>
                 </div>
 
-                <button type="button" class="btn btn-outline" id="cirBtn">Draw A Circle!</button>
+            </div>
+
+            <div class="col-3">
+
+                <div class="input-group mb-3 mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="triHeight">Height:</span>
+                    </div>
+                    <input type="text" class="form-control col-12">
+                    <div class="input-group-append">
+                        <span class="input-group-text">px</span>
+                    </div>
+                    <button type="submit" class="btn btn-outline-warning mt-3" id="triBtn">Draw A Triangle!</button>
+                </div>
 
             </div>
 
@@ -67,23 +91,32 @@
 
     </div>
 
-    <!-- <form id="formRect">
-    Width: <input type="text" name="rectWidth">
-    Height: <input type="text" name="rectHeight">
-    <button type="submit" class="btn btn-dark">Draw Rectangle!</button>
-    </form> -->
+    <div class="container">
 
-    <form id="formSq">
+        <div class="row">
 
-    </form>
+            <div class="col-8 mt-3" id="canvas">
 
-    <form id="formCir">
+            </div>
 
-    </form>
+            <div class="col-4 mt-3 bg-info">
 
-    <form id="formTri">
+                <div class="navbar">
 
-    </form>
+                    <div class="navbar-text col-12">Shape Name: <span id="navShapeName"></span></div>
+                    <div class="navbar-text col-12">Width: <span id="navWidth"></span></div>
+                    <div class="navbar-text col-12">Height: <span id="navHeight"></span></div>
+                    <div class="navbar-text col-12">Radius: <span id="navRadius"></span></div>
+                    <div class="navbar-text col-12">Area: <span id="navArea"></span></div>
+                    <div class="navbar-text col-12">Perimeter: <span id="navPerimeter"></span></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
