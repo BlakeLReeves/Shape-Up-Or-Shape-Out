@@ -91,6 +91,47 @@ class Square extends Shape {
     }
 }
 
+class Circle extends Shape {
+    constructor(shapeName, top, left, width, height, radius, area, perimeter) {
+
+        super(width, height);
+
+        this.shapeName = shapeName;
+        this.top = top;
+        this.left = left;
+        this.radius = radius;
+        this.area = area;
+        this.perimeter = perimeter;
+        this.div = $(`<div class="${this.shapeName}"></div>`);
+        this.div.css({
+            "top": `${this.top}px`,
+            "left": `${this.left}px`,
+            "width": `${this.width}px`,
+            "height": `${this.height}px`,
+        });
+        canvas.append(this.div);
+
+        this.div.click(() => {
+            this.describe();
+        });
+    }
+
+    describe() {
+        let navShapeName = $(`#navShapeName`);
+        let navWidth = $(`#navWidth`)
+        let navHeight = $(`#navHeight`);
+        let navRadius = $(`#navRadius`);
+        let navArea = $(`#navArea`);
+        let navPerimeter = $(`#navPerimeter`);
+        navShapeName.text(` ${this.shapeName}`);
+        navWidth.text(` ${this.width}`);
+        navHeight.text(` ${this.height}`);
+        navRadius.text(` ${this.radius}`);
+        navArea.text(` ${this.area}`);
+        navPerimeter.text(` ${this.perimeter}`);
+    }
+}
+
 let rectBtn = $(`#rectBtn`);
 
 rectBtn.click(() => {
@@ -147,6 +188,28 @@ sqBtn.click(() => {
     console.log(newSq);
 });
 
+let cirBtn = $(`#cirBtn`);
+
+cirBtn.click(() => {
+    this.cirRadiusInput = $(`#cirRadiusInput`).val();
+
+    let radius = this.cirRadiusInput;
+    let width = (this.cirRadiusInput * 2);
+    let height = (this.cirRadiusInput * 2);
+    let top = Math.floor(Math.random() * (600 - (2 * radius)));
+    let left = Math.floor(Math.random() * (600 - (2 * radius)));
+    let area = (Math.PI * this.cirRadiusInput * this.cirRadiusInput);
+    let perimeter = (2*Math.PI*this.cirRadiusInput);
+
+    if (cirRadiusInput > 300) {
+        alert('The maximum input is 300. Try again!')
+        return;
+    }
+
+    let newCir = new Circle('circle', top, left, width, height, radius, area, perimeter);
+
+    console.log(newCir);
+});
 // let s1 = new Shape('Square', null, null, 40, 200, 50, null);
 // console.log(s1);
 // s1.describe();
